@@ -7,9 +7,9 @@ The official filter seems don't work, so I write my filter code.
 
 My demo is used to trace the MMDetection code, you can change it.
 
-As the saying goes,read the code is worse than read the execution.—— jyy 
+As the saying goes,read the code is worse than read the execution.—— Yanyan Jiang 
 
-子曾经曰过，读代码不如读执行，优雅调试前提是舒服 —— [jyy wiki](https://jyywiki.cn/OS/2022/slides/29.slides#/2/2)
+子曾经曰过，读代码不如读执行，优雅调试前提是舒服 —— [蒋炎岩](https://cs.nju.edu.cn/ics/people/yanyanjiang/index.html)
 
 ## Usage
 1. First, add the function that you want to the main()
