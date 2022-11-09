@@ -1,7 +1,7 @@
 # PyTrace-Lite
-A simple tool helps you trace the python program.	  
+A simple tool helps you trace the python programs.	  
 
-I think the official python trace document is not written well, so I rewrite the code.	  
+I believe the official python trace document wat not written well, so I rewrite the code.	  
 
 The official filter seems to not be woking, so I write my own filter code.	  
 
