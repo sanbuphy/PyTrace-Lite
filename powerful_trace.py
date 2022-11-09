@@ -1,16 +1,30 @@
+'''
+Author: physico
+Date: 2022-10-27 11:33:51
+LastEditTime: 2022-11-09 20:47:18
+FilePath: /mmdetection3/powerful_trace.py
+Description: 
+Function List: 
+'''
+# 代码验证
+
 import trace
 import os
 import pickle
 import pandas as pd
 from typing import List
+import importlib
+import mmdet
+import mmengine
 
 class MyTrace(object):
     """trace what you want"""
-    def __init__(self,ignoremods:List[str],ignoredirs:List[str],filtermods:List[str],renamemods:List[str],filename:str,funcname:str):
+    def __init__(self,ignoremods:List[str],ignoredirs:List[str],filtermods:List[str],renamemods:List[str],filename:str,funcname:str,if_annotation:bool):
         self.outfile = filename
         self.func = funcname
         self.filtermods = filtermods
         self.renamemods = renamemods
+        self.annotation = if_annotation
         self._init_outfile()
         self.trace = trace.Trace(
             ignoremods,
@@ -79,19 +93,60 @@ class MyTrace(object):
         return pkl_list
 
     def get_result_csv(self,data_list:list):
-        df = pd.DataFrame(columns=['path','file_name',"func_name"])
+        df = pd.DataFrame(columns=['path','file_name',"func_name","annotation"])
         for i in data_list:
             df.loc[df.shape[0]] = dict(zip(df.columns,i))
+        
+        if self.annotation:
+            self.get_annotation(df)
         df.to_csv(self.outfile.split(".pkl")[0]+".csv")
     
     @staticmethod
     def run():
         pkl_list = my_trace.get_pkl_list()
         pkl_list = custom_filter(pkl_list)
-
+        print(pkl_list)
         # output the result
         my_trace.get_result_csv(pkl_list)
 
+    def get_annotation(self,df):
+        df["annotation"] = "None"
+        for i in range(len(df)):
+            file_name = df.iloc[i,0]
+            func_name = df.iloc[i,2]
+            import_from_file = 0
+            if type(file_name)==str:
+                file_import_name = file_name.split(".py")[0]
+                file_import_name = file_import_name.replace("/",".")
+
+            if "mmengine" in file_import_name and type(file_import_name)==str:
+                import_from_file = "mmengine"+ file_import_name.split("mmengine")[-1] 
+
+                import_module = importlib.import_module(import_from_file)
+                assert type(import_module)==type(importlib)
+                if func_name.split(".")[0] in dir(import_module) and type(import_from_file)==str:
+                    function = eval(import_from_file+"."+func_name)
+                    assert callable(function)
+                    
+                    if hasattr(function,'__doc__') and (function.__doc__ != ""):
+                        df["annotation"][i] = function.__doc__        
+
+            _file_import_name = file_import_name
+            if "mmdet" in _file_import_name.split(".") and type(file_import_name)==str:
+                import_from_file = "mmdet"+ file_import_name.split("mmdet")[-1] 
+                import_module = importlib.import_module(import_from_file)
+                assert type(import_module)==type(importlib)
+                if func_name.split(".")[0] in dir(import_module) and type(import_from_file)==str:
+                    try:
+                        function = eval(import_from_file+"."+func_name)
+                    except:
+                        function = eval(import_from_file)
+
+                    assert callable(function)
+                    if hasattr(function,'__doc__') and (function.__doc__ != ""):
+                        df["annotation"][i] = function.__doc__
+            
+        # df.to_csv("trace_file/trace_result2.csv")
 if __name__ == "__main__":
 
     """ Add the function what you want to be traced here
@@ -121,8 +176,8 @@ if __name__ == "__main__":
         )
 
     def custom_filter(data_list):
-        """ Some filter operations cannot be combined with the previous operations, we must do it in the end.
-            Whether to add this step depend on the final result.
+        """Some filter operations cannot be combined with the previous operations, we must do it in the end.
+           Whether to add this step depend on the final result.
         """
         for i in data_list.copy():
             if "python3.7" in i[0] and "mmengine" not in i[0]:
@@ -142,5 +197,6 @@ if __name__ == "__main__":
     renamemods=["mmdetection3","envs"]
 
     # build mytrace instance
-    my_trace = MyTrace(ignoremods,ignoredirs,filtermods,renamemods,filename = "trace_result.pkl",funcname = funcname)
+    my_trace = MyTrace(ignoremods,ignoredirs,filtermods,renamemods,filename = "trace_result.pkl",
+                        funcname = funcname, if_annotation=True)
     my_trace.run()
