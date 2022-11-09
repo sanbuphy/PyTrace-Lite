@@ -11,7 +11,7 @@ As the saying goes,read the code is worse than read the execution.—— Yanyan 
 
 子曾经曰过，读代码不如读执行，优雅调试前提是舒服 —— [蒋炎岩](https://cs.nju.edu.cn/ics/people/yanyanjiang/index.html)
 
-PyTrace可以trace所有python程序（能结束，非死循环），并获取筛选执行流切换的情况，帮助你更好的理解代码数据流动。
+PyTrace 可以 trace 所有 python 程序（能结束，非死循环，你只要把程序调用入口放到main()），并获取筛选执行流切换的情况，帮助你更好的理解代码数据流动。
 
 你可以筛选输出后的csv文件获取想要的信息。
 
