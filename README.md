@@ -33,7 +33,7 @@ You can search the function in main() to find the specific output location in cs
 
 I suggest you reshape the csv by setting row height and column width to 20.  
 
-You can also delete the 'func_name' column to read more comfortably.
+You can also delete the 'file_name' column to read more comfortably.
 
 
 
