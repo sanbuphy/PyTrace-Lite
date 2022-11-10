@@ -1,6 +1,10 @@
 # PyTrace-Lite
 A simple tool helps you trace the python programs.	  
 
+It can display the execution sequence and corresponding annotations and parameters of the specified function.
+
+![](./trace_file/Sample.png)
+
 I believe the [official python trace document](https://docs.python.org/3/library/trace.html) is not written well, so I rewrite the code.	  
 
 The official filter seems to not be woking, so I write my own filter code.	  
@@ -26,3 +30,11 @@ if successful, you will see the output information.
 
 
 You can search the function in main() to find the specific output location in csv.
+
+I suggest you reshape the csv by setting row height and column width to 20.  
+
+You can also delete the 'func_name' column to read more comfortably.
+
+
+
+

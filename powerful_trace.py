@@ -1,25 +1,44 @@
-'''
-Author: physico
-Date: 2022-10-27 11:33:51
-LastEditTime: 2022-11-09 20:47:18
-FilePath: /mmdetection3/powerful_trace.py
-Description: 
-Function List: 
-'''
-# 代码验证
-
 import trace
 import os
 import pickle
 import pandas as pd
 from typing import List
 import importlib
-import mmdet
-import mmengine
+
 
 class MyTrace(object):
-    """trace what you want"""
-    def __init__(self,ignoremods:List[str],ignoredirs:List[str],filtermods:List[str],renamemods:List[str],filename:str,funcname:str,if_annotation:bool):
+    """ trace what you want
+        Two files will be output finally:
+
+        '.pkl' file: 
+            A python module that enabless objects to be serialized to files on disk.
+            Record all debugging information.
+        '.csv' file:
+            Record all information of function state transition, include the annotation and parameter.
+    """
+
+    def __init__(self,ignoremods:List[str],ignoredirs:List[str],filtermods:List[str],
+                 renamemods:List[str],filename:str,funcname:str,if_annotation:bool):
+        """
+            Args:
+            ignoremods:
+                a list of the names of modules to ignore.
+            ignoredirs:
+                a list of the names of directories to ignore
+                all of the (recursive) contents of
+            filtermods:
+                Select the module to be filtered.
+            renamemods:
+                Select the module whose name needs to be replaced.
+                (If you don't do this, the file name will be very long unless you want to debug the code)
+            filename:
+                Export address of the 'pkl' file.
+            funcname:
+                The program entrance that you want to track.
+            if_annotation:
+                Decide whether to start annotation printing, If false,
+                Corresponding function annotation will not be obtained and printed into csv file.
+        """
         self.outfile = filename
         self.func = funcname
         self.filtermods = filtermods
@@ -93,7 +112,7 @@ class MyTrace(object):
         return pkl_list
 
     def get_result_csv(self,data_list:list):
-        df = pd.DataFrame(columns=['path','file_name',"func_name","annotation"])
+        df = pd.DataFrame(columns=['path','file_name',"func_name","annotation","parameter"])
         for i in data_list:
             df.loc[df.shape[0]] = dict(zip(df.columns,i))
         
@@ -111,6 +130,7 @@ class MyTrace(object):
 
     def get_annotation(self,df):
         df["annotation"] = "None"
+        df["parameter"] = "None"
         for i in range(len(df)):
             file_name = df.iloc[i,0]
             func_name = df.iloc[i,2]
@@ -130,6 +150,11 @@ class MyTrace(object):
                     
                     if hasattr(function,'__doc__') and (function.__doc__ != ""):
                         df["annotation"][i] = function.__doc__        
+                    if hasattr(function,'__code__'):
+                        try:
+                            df["parameter"][i] = function.__code__.co_varnames 
+                        except:
+                            pass
 
             _file_import_name = file_import_name
             if "mmdet" in _file_import_name.split(".") and type(file_import_name)==str:
@@ -145,17 +170,31 @@ class MyTrace(object):
                     assert callable(function)
                     if hasattr(function,'__doc__') and (function.__doc__ != ""):
                         df["annotation"][i] = function.__doc__
-            
-        # df.to_csv("trace_file/trace_result2.csv")
+                    if hasattr(function,'__code__'):
+                        try:
+                            df["parameter"][i] = function.__code__.co_varnames 
+                        except:
+                            pass
+
+
 if __name__ == "__main__":
 
-    """ Add the function what you want to be traced here
-        Don't put 'import' in main()!!!!!
+    """ Add the program needed module here
+        Don't put module in main()!!!!!
+
+        Warning:If you want to view annotation and function parameter in csv.
+        You need to import their dependent modules here, like mmdet, mmengine.
     """
+    import mmdet
+    import mmengine
+
     from mmdet.apis import init_detector, inference_detector
     from mmdet.utils import register_all_modules
     from mmdet.registry import VISUALIZERS
     import mmcv
+
+    """ Add the program that you want to be traced here
+    """
 
     def main():
         register_all_modules()

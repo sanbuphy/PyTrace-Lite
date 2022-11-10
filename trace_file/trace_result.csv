@@ -1,6 +1,6 @@
-,path,file_name,func_name,annotation
-0,<string>,<string>,<module>,None
-1,powerful_trace.py,powerful_trace,main,None
+,path,file_name,func_name,annotation,parameter
+0,<string>,<string>,<module>,None,None
+1,powerful_trace.py,powerful_trace,main,None,None
 2,mmdet/utils/setup_env.py,setup_env,register_all_modules,"Register all modules in mmdet into the registries.
 
     Args:
@@ -10,10 +10,10 @@
             registry node. To understand more about the registry, please refer
             to https://github.com/open-mmlab/mmengine/blob/main/docs/en/tutorials/registry.md
             Defaults to True.
-    "
-3,mmdet/engine/__init__.py,__init__,<module>,None
-4,mmdet/engine/hooks/__init__.py,__init__,<module>,None
-5,mmdet/engine/hooks/checkloss_hook.py,checkloss_hook,<module>,None
+    ","('init_default_scope', 'mmdet', 'never_created', 'current_scope', 'new_instance_name')"
+3,mmdet/engine/__init__.py,__init__,<module>,None,None
+4,mmdet/engine/hooks/__init__.py,__init__,<module>,None,None
+5,mmdet/engine/hooks/checkloss_hook.py,checkloss_hook,<module>,None,None
 6,mmengine/registry/registry.py,registry,Registry.register_module,"Register a module.
 
         A record will be added to ``self._module_dict``, whose key is the class
@@ -43,7 +43,7 @@
             >>> class ResNet:
             >>>     pass
             >>> backbones.register_module(module=ResNet)
-        "
+        ","('self', 'name', 'force', 'module', '_register')"
 7,mmdet/engine/hooks/checkloss_hook.py,checkloss_hook,CheckInvalidLossHook,"Check invalid loss hook.
 
     This hook will regularly check whether the loss is valid
@@ -52,8 +52,8 @@
     Args:
         interval (int): Checking interval (every k iterations).
             Default: 50.
-    "
-8,mmengine/registry/registry.py,registry,_register,None
+    ",None
+8,mmengine/registry/registry.py,registry,_register,None,None
 9,mmengine/registry/registry.py,registry,Registry._register_module,"Register a module.
 
         Args:
@@ -63,8 +63,8 @@
                 Defaults to None.
             force (bool): Whether to override an existing class with the same
                 name. Defaults to False.
-        "
-10,mmdet/engine/hooks/mean_teacher_hook.py,mean_teacher_hook,<module>,None
+        ","('self', 'module', 'module_name', 'force', 'name', 'existed_module')"
+10,mmdet/engine/hooks/mean_teacher_hook.py,mean_teacher_hook,<module>,None,None
 11,mmdet/engine/hooks/mean_teacher_hook.py,mean_teacher_hook,MeanTeacherHook,"Mean Teacher Hook.
 
     Mean Teacher is an efficient semi-supervised learning method in
@@ -87,31 +87,31 @@
         skip_buffers (bool): Whether to skip the model buffers, such as
             batchnorm running stats (running_mean, running_var), it does not
             perform the ema operation. Default to True.
-    "
-12,mmdet/engine/hooks/memory_profiler_hook.py,memory_profiler_hook,<module>,None
+    ",None
+12,mmdet/engine/hooks/memory_profiler_hook.py,memory_profiler_hook,<module>,None,None
 13,mmdet/engine/hooks/memory_profiler_hook.py,memory_profiler_hook,MemoryProfilerHook,"Memory profiler hook recording memory information including virtual
     memory, swap memory, and the memory of the current process.
 
     Args:
         interval (int): Checking interval (every k iterations).
             Default: 50.
-    "
-14,mmdet/engine/hooks/num_class_check_hook.py,num_class_check_hook,<module>,None
+    ",None
+14,mmdet/engine/hooks/num_class_check_hook.py,num_class_check_hook,<module>,None,None
 15,mmdet/engine/hooks/num_class_check_hook.py,num_class_check_hook,NumClassCheckHook,"Check whether the `num_classes` in head matches the length of `CLASSES`
-    in `dataset.metainfo`."
-16,mmdet/engine/hooks/pipeline_switch_hook.py,pipeline_switch_hook,<module>,None
+    in `dataset.metainfo`.",None
+16,mmdet/engine/hooks/pipeline_switch_hook.py,pipeline_switch_hook,<module>,None,None
 17,mmdet/engine/hooks/pipeline_switch_hook.py,pipeline_switch_hook,PipelineSwitchHook,"Switch data pipeline at switch_epoch.
 
     Args:
         switch_epoch (int): switch pipeline at this epoch.
         switch_pipeline (list[dict]): the pipeline to switch to.
-    "
-18,mmdet/engine/hooks/set_epoch_info_hook.py,set_epoch_info_hook,<module>,None
-19,mmdet/engine/hooks/set_epoch_info_hook.py,set_epoch_info_hook,SetEpochInfoHook,Set runner's epoch information to the model.
-20,mmdet/engine/hooks/sync_norm_hook.py,sync_norm_hook,<module>,None
-21,mmdet/engine/hooks/sync_norm_hook.py,sync_norm_hook,SyncNormHook,"Synchronize Norm states before validation, currently used in YOLOX."
-22,mmdet/engine/hooks/utils.py,utils,<module>,None
-23,mmdet/engine/hooks/visualization_hook.py,visualization_hook,<module>,None
+    ",None
+18,mmdet/engine/hooks/set_epoch_info_hook.py,set_epoch_info_hook,<module>,None,None
+19,mmdet/engine/hooks/set_epoch_info_hook.py,set_epoch_info_hook,SetEpochInfoHook,Set runner's epoch information to the model.,None
+20,mmdet/engine/hooks/sync_norm_hook.py,sync_norm_hook,<module>,None,None
+21,mmdet/engine/hooks/sync_norm_hook.py,sync_norm_hook,SyncNormHook,"Synchronize Norm states before validation, currently used in YOLOX.",None
+22,mmdet/engine/hooks/utils.py,utils,<module>,None,None
+23,mmdet/engine/hooks/visualization_hook.py,visualization_hook,<module>,None,None
 24,mmdet/engine/hooks/visualization_hook.py,visualization_hook,DetVisualizationHook,"Detection Visualization Hook. Used to visualize validation and testing
     process prediction results.
 
@@ -141,8 +141,8 @@
         file_client_args (dict): Arguments to instantiate a FileClient.
             See :class:`mmengine.fileio.FileClient` for details.
             Defaults to ``dict(backend='disk')``.
-    "
-25,mmdet/engine/hooks/yolox_mode_switch_hook.py,yolox_mode_switch_hook,<module>,None
+    ",None
+25,mmdet/engine/hooks/yolox_mode_switch_hook.py,yolox_mode_switch_hook,<module>,None,None
 26,mmdet/engine/hooks/yolox_mode_switch_hook.py,yolox_mode_switch_hook,YOLOXModeSwitchHook,"Switch the mode of YOLOX during training.
 
     This hook turns off the mosaic and mixup data augmentation and switches
@@ -154,15 +154,15 @@
             Defaults to 15.
        skip_type_keys (Sequence[str], optional): Sequence of type string to be
             skip pipeline. Defaults to ('Mosaic', 'RandomAffine', 'MixUp').
-    "
-27,mmdet/engine/optimizers/__init__.py,__init__,<module>,None
-28,mmdet/engine/optimizers/layer_decay_optimizer_constructor.py,layer_decay_optimizer_constructor,<module>,None
-29,mmdet/engine/optimizers/layer_decay_optimizer_constructor.py,layer_decay_optimizer_constructor,LearningRateDecayOptimizerConstructor,
-30,mmdet/engine/runner/__init__.py,__init__,<module>,None
-31,mmdet/engine/runner/loops.py,loops,<module>,None
-32,mmdet/engine/runner/loops.py,loops,TeacherStudentValLoop,Loop for validation of model teacher and student.
-33,mmdet/engine/schedulers/__init__.py,__init__,<module>,None
-34,mmdet/engine/schedulers/quadratic_warmup.py,quadratic_warmup,<module>,None
+    ",None
+27,mmdet/engine/optimizers/__init__.py,__init__,<module>,None,None
+28,mmdet/engine/optimizers/layer_decay_optimizer_constructor.py,layer_decay_optimizer_constructor,<module>,None,None
+29,mmdet/engine/optimizers/layer_decay_optimizer_constructor.py,layer_decay_optimizer_constructor,LearningRateDecayOptimizerConstructor,,None
+30,mmdet/engine/runner/__init__.py,__init__,<module>,None,None
+31,mmdet/engine/runner/loops.py,loops,<module>,None,None
+32,mmdet/engine/runner/loops.py,loops,TeacherStudentValLoop,Loop for validation of model teacher and student.,None
+33,mmdet/engine/schedulers/__init__.py,__init__,<module>,None,None
+34,mmdet/engine/schedulers/quadratic_warmup.py,quadratic_warmup,<module>,None,None
 35,mmdet/engine/schedulers/quadratic_warmup.py,quadratic_warmup,QuadraticWarmupParamScheduler,"Warm up the parameter value of each parameter group by quadratic
     formula:
 
@@ -184,7 +184,7 @@
             epochs. Defaults to True.
         verbose (bool): Whether to print the value for each update.
             Defaults to False.
-    "
+    ",None
 36,mmdet/engine/schedulers/quadratic_warmup.py,quadratic_warmup,QuadraticWarmupLR,"Warm up the learning rate of each parameter group by quadratic formula.
 
     Args:
@@ -199,7 +199,7 @@
             epochs. Defaults to True.
         verbose (bool): Whether to print the value for each update.
             Defaults to False.
-    "
+    ",None
 37,mmdet/engine/schedulers/quadratic_warmup.py,quadratic_warmup,QuadraticWarmupMomentum,"Warm up the momentum value of each parameter group by quadratic formula.
 
     Args:
@@ -214,10 +214,10 @@
             epochs. Defaults to True.
         verbose (bool): Whether to print the value for each update.
             Defaults to False.
-    "
-38,mmdet/visualization/__init__.py,__init__,<module>,None
-39,mmdet/visualization/local_visualizer.py,local_visualizer,<module>,None
-40,mmdet/visualization/palette.py,palette,<module>,None
+    ",None
+38,mmdet/visualization/__init__.py,__init__,<module>,None,None
+39,mmdet/visualization/local_visualizer.py,local_visualizer,<module>,None,None
+40,mmdet/visualization/palette.py,palette,<module>,None,None
 41,mmdet/visualization/local_visualizer.py,local_visualizer,DetLocalVisualizer,"MMDetection Local Visualizer.
 
     Args:
@@ -272,7 +272,7 @@
         >>> det_local_visualizer.add_datasample('image', image,
         ...                         gt_det_data_sample,
         ...                         pred_det_data_sample)
-    "
+    ",None
 42,mmengine/dist/utils.py,utils,master_only,"Decorate those methods which should be executed in master process.
 
     Args:
@@ -280,18 +280,18 @@
 
     Returns:
         callable: Return decorated function.
-    "
-43,mmengine/utils/manager.py,manager,ManagerMeta.__init__,
-44,<string>,<string>,__new__,None
-45,mmengine/registry/default_scope.py,default_scope,get_current_instance,None
+    ","('func', 'wrapper')"
+43,mmengine/utils/manager.py,manager,ManagerMeta.__init__,,"('cls', 'args', 'params', 'params_names')"
+44,<string>,<string>,__new__,None,None
+45,mmengine/registry/default_scope.py,default_scope,get_current_instance,None,None
 46,mmengine/utils/manager.py,manager,_accquire_lock,"Acquire the module-level lock for serializing access to shared data.
 
     This should be released with _release_lock().
-    "
-47,mmengine/utils/manager.py,manager,_release_lock,Release the module-level lock acquired by calling _accquire_lock().
-48,mmengine/utils/manager.py,manager,get_instance,None
-49,mmengine/registry/default_scope.py,default_scope,DefaultScope.__init__,
-50,mmengine/utils/manager.py,manager,ManagerMixin.__init__,
+    ",()
+47,mmengine/utils/manager.py,manager,_release_lock,Release the module-level lock acquired by calling _accquire_lock().,()
+48,mmengine/utils/manager.py,manager,get_instance,None,None
+49,mmengine/registry/default_scope.py,default_scope,DefaultScope.__init__,,"('self', 'name', 'scope_name')"
+50,mmengine/utils/manager.py,manager,ManagerMixin.__init__,,"('self', 'name', 'kwargs')"
 51,mmdet/apis/inference.py,inference,init_detector,"Initialize a detector from config file.
 
     Args:
@@ -310,29 +310,29 @@
 
     Returns:
         nn.Module: The constructed detector.
-    "
-52,mmengine/config/config.py,config,fromfile,None
-53,mmengine/config/config.py,config,_file2dict,None
-54,mmengine/utils/path.py,path,check_file_exist,
-55,mmengine/config/config.py,config,_substitute_predefined_vars,None
-56,mmengine/config/config.py,config,_pre_substitute_base_vars,None
-57,mmengine/config/config.py,config,_get_base_files,None
-58,mmengine/config/config.py,config,_validate_py_syntax,None
-59,mmengine/config/config.py,config,<genexpr>,None
-60,mmengine/config/config.py,config,is_base_line,None
-61,mmengine/config/utils.py,utils,RemoveAssignFromAST.__init__,
-62,mmengine/config/utils.py,utils,RemoveAssignFromAST.visit_Assign,
-63,,,<module>,None
-64,mmengine/config/config.py,config,<dictcomp>,None
-65,mmengine/config/config.py,config,_parse_scope,None
-66,mmengine/config/config.py,config,_substitute_base_vars,None
-67,mmengine/config/config.py,config,<listcomp>,None
-68,mmengine/config/config.py,config,_merge_a_into_b,None
-69,mmengine/config/config.py,config,ConfigDict.__getattr__,
-70,mmengine/config/config.py,config,ConfigDict.__missing__,
-71,mmengine/config/config.py,config,Config.__init__,
-72,mmengine/config/config.py,config,Config.__getattr__,
-73,mmdet/models/builder.py,builder,build_detector,Build detector.
+    ","('config', 'checkpoint', 'palette', 'device', 'cfg_options', 'model', 'checkpoint_meta', 'classes')"
+52,mmengine/config/config.py,config,fromfile,None,None
+53,mmengine/config/config.py,config,_file2dict,None,None
+54,mmengine/utils/path.py,path,check_file_exist,,"('filename', 'msg_tmpl')"
+55,mmengine/config/config.py,config,_substitute_predefined_vars,None,None
+56,mmengine/config/config.py,config,_pre_substitute_base_vars,None,None
+57,mmengine/config/config.py,config,_get_base_files,None,None
+58,mmengine/config/config.py,config,_validate_py_syntax,None,None
+59,mmengine/config/config.py,config,<genexpr>,None,None
+60,mmengine/config/config.py,config,is_base_line,None,None
+61,mmengine/config/utils.py,utils,RemoveAssignFromAST.__init__,,"('self', 'key')"
+62,mmengine/config/utils.py,utils,RemoveAssignFromAST.visit_Assign,,"('self', 'node')"
+63,,,<module>,None,None
+64,mmengine/config/config.py,config,<dictcomp>,None,None
+65,mmengine/config/config.py,config,_parse_scope,None,None
+66,mmengine/config/config.py,config,_substitute_base_vars,None,None
+67,mmengine/config/config.py,config,<listcomp>,None,None
+68,mmengine/config/config.py,config,_merge_a_into_b,None,None
+69,mmengine/config/config.py,config,ConfigDict.__getattr__,,"('self', 'name', 'value', 'e')"
+70,mmengine/config/config.py,config,ConfigDict.__missing__,,"('self', 'name')"
+71,mmengine/config/config.py,config,Config.__init__,,"('self', 'cfg_dict', 'cfg_text', 'filename', 'key', 'text', 'f')"
+72,mmengine/config/config.py,config,Config.__getattr__,,"('self', 'name')"
+73,mmdet/models/builder.py,builder,build_detector,Build detector.,"('cfg', 'train_cfg', 'test_cfg')"
 74,mmengine/registry/registry.py,registry,Registry.build,"Build an instance.
 
         Build an instance by calling :attr:`build_func`.
@@ -353,7 +353,7 @@
             >>>         self.stages = stages
             >>> cfg = dict(type='ResNet', depth=50)
             >>> model = MODELS.build(cfg)
-        "
+        ","('self', 'cfg', 'args', 'kwargs')"
 75,mmengine/registry/build_functions.py,build_functions,build_model_from_cfg,"Build a PyTorch model from config dict(s). Different from
     ``build_from_cfg``, if cfg is a list, a ``nn.Sequential`` will be built.
 
@@ -367,7 +367,7 @@
 
     Returns:
         nn.Module: A built nn.Module.
-    "
+    ","('cfg', 'registry', 'default_args', 'Sequential', 'modules')"
 76,mmengine/registry/build_functions.py,build_functions,build_from_cfg,"Build a module from config dict when it is a class configuration, or
     call a function from config dict when it is a function configuration.
 
@@ -409,12 +409,12 @@
 
     Returns:
         object: The constructed object.
-    "
-77,mmengine/registry/registry.py,registry,switch_scope_and_registry,None
-78,mmengine/registry/default_scope.py,default_scope,overwrite_default_scope,None
-79,mmengine/utils/manager.py,manager,get_current_instance,None
-80,mmengine/registry/default_scope.py,default_scope,scope_name,None
-81,mmengine/registry/registry.py,registry,Registry._get_root_registry,Return the root registry.
+    ","('cfg', 'registry', 'default_args', 'print_log', 'args', 'name', 'value', 'scope', 'obj_type', 'obj_cls', 'obj', 'e', 'cls_location')"
+77,mmengine/registry/registry.py,registry,switch_scope_and_registry,None,None
+78,mmengine/registry/default_scope.py,default_scope,overwrite_default_scope,None,None
+79,mmengine/utils/manager.py,manager,get_current_instance,None,None
+80,mmengine/registry/default_scope.py,default_scope,scope_name,None,None
+81,mmengine/registry/registry.py,registry,Registry._get_root_registry,Return the root registry.,"('self', 'root')"
 82,mmengine/registry/registry.py,registry,Registry._search_child,"Depth-first search for the corresponding registry in its children.
 
         Note that the method only search for the corresponding registry from
@@ -429,7 +429,7 @@
         Returns:
             Registry or None: Return the corresponding registry if ``scope``
             exists, otherwise return None.
-        "
+        ","('self', 'scope', 'child', 'registry')"
 83,mmengine/registry/registry.py,registry,Registry.get,"Get the registry record.
 
         The method will first parse :attr:`key` and check whether it contains
@@ -477,10 +477,10 @@
             >>>     pass
             >>> # `get` from its sibling registries
             >>> mobilenet_cls = DETECTORS.get('cls.MobileNet')
-        "
-84,mmengine/registry/registry.py,registry,split_scope_key,None
-85,mmengine/registry/registry.py,registry,name,None
-86,mmengine/registry/registry.py,registry,scope,None
+        ","('self', 'key', 'print_log', 'scope', 'real_key', 'obj_cls', 'registry_name', 'scope_name', 'parent', 'module', 'root')"
+84,mmengine/registry/registry.py,registry,split_scope_key,None,None
+85,mmengine/registry/registry.py,registry,name,None,None
+86,mmengine/registry/registry.py,registry,scope,None,None
 87,mmengine/logging/logger.py,logger,print_log,"Print a log message.
 
     Args:
@@ -497,10 +497,10 @@
             - None: The `print()` method will be used to print log messages.
         level (int): Logging level. Only available when `logger` is a Logger
             object, ""current"", or a created logger instance name.
-    "
-88,mmengine/logging/logger.py,logger,get_current_instance,None
-89,mmengine/logging/logger.py,logger,MMLogger.__init__,
-90,mmengine/logging/logger.py,logger,_get_rank,Support using logging module without torch.
+    ","('msg', 'logger', 'level', 'logger_instance')"
+88,mmengine/logging/logger.py,logger,get_current_instance,None,None
+89,mmengine/logging/logger.py,logger,MMLogger.__init__,,"('self', 'name', 'logger_name', 'log_file', 'log_level', 'file_mode', 'distributed', 'rank', 'stream_handler', 'path_split', 'filename_list', 'file_handler')"
+90,mmengine/logging/logger.py,logger,_get_rank,Support using logging module without torch.,"('get_rank',)"
 91,mmengine/dist/utils.py,utils,get_rank,"Return the rank of the given process group.
 
     Rank is a unique identifier assigned to each process within a distributed
@@ -517,9 +517,9 @@
     Returns:
         int: Return the rank of the process group if in distributed
         environment, otherwise 0.
-    "
-92,mmengine/dist/utils.py,utils,is_distributed,Return True if distributed environment has been initialized.
-93,mmengine/logging/logger.py,logger,MMFormatter.__init__,
+    ","('group',)"
+92,mmengine/dist/utils.py,utils,is_distributed,Return True if distributed environment has been initialized.,()
+93,mmengine/logging/logger.py,logger,MMFormatter.__init__,,"('self', 'color', 'blink', 'kwargs', 'error_prefix', 'warn_prefix', 'info_prefix', 'debug_prefix')"
 94,mmengine/logging/logger.py,logger,MMFormatter._get_prefix,"Get the prefix of the target log level.
 
         Args:
@@ -529,7 +529,7 @@
 
         Returns:
             str: The plain or colorful prefix.
-        "
+        ","('self', 'level', 'color', 'blink', 'attrs', 'prefix')"
 95,mmengine/logging/logger.py,logger,MMLogger.callHandlers,"Pass a record to all relevant handlers.
 
         Override ``callHandlers`` method in ``logging.Logger`` to avoid
@@ -540,16 +540,16 @@
         Args:
             record (LogRecord): A ``LogRecord`` instance contains logged
                 message.
-        "
-96,mmdet/models/detectors/yolo.py,yolo,YOLOV3.__init__,
-97,mmdet/models/detectors/single_stage.py,single_stage,SingleStageDetector.__init__,
-98,mmdet/models/detectors/base.py,base,BaseDetector.__init__,
-99,mmengine/model/base_model/base_model.py,base_model,BaseModel.__init__,
-100,mmengine/model/base_module.py,base_module,BaseModule.__init__,"Initialize BaseModule, inherited from `torch.nn.Module`"
-101,mmdet/models/data_preprocessors/data_preprocessor.py,data_preprocessor,DetDataPreprocessor.__init__,
-102,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,ImgDataPreprocessor.__init__,
-103,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,BaseDataPreprocessor.__init__,
-104,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.__init__,
+        ","('self', 'record', 'handler')"
+96,mmdet/models/detectors/yolo.py,yolo,YOLOV3.__init__,,"('self', 'backbone', 'neck', 'bbox_head', 'train_cfg', 'test_cfg', 'data_preprocessor', 'init_cfg')"
+97,mmdet/models/detectors/single_stage.py,single_stage,SingleStageDetector.__init__,,"('self', 'backbone', 'neck', 'bbox_head', 'train_cfg', 'test_cfg', 'data_preprocessor', 'init_cfg')"
+98,mmdet/models/detectors/base.py,base,BaseDetector.__init__,,"('self', 'data_preprocessor', 'init_cfg')"
+99,mmengine/model/base_model/base_model.py,base_model,BaseModel.__init__,,"('self', 'data_preprocessor', 'init_cfg')"
+100,mmengine/model/base_module.py,base_module,BaseModule.__init__,"Initialize BaseModule, inherited from `torch.nn.Module`","('self', 'init_cfg')"
+101,mmdet/models/data_preprocessors/data_preprocessor.py,data_preprocessor,DetDataPreprocessor.__init__,,"('self', 'mean', 'std', 'pad_size_divisor', 'pad_value', 'pad_mask', 'mask_pad_value', 'pad_seg', 'seg_pad_value', 'bgr_to_rgb', 'rgb_to_bgr', 'boxtype2tensor', 'batch_augments')"
+102,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,ImgDataPreprocessor.__init__,,"('self', 'mean', 'std', 'pad_size_divisor', 'pad_value', 'bgr_to_rgb', 'rgb_to_bgr', 'non_blocking')"
+103,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,BaseDataPreprocessor.__init__,,"('self', 'non_blocking')"
+104,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.__init__,,"('self', 'widen_factor', 'out_indices', 'frozen_stages', 'conv_cfg', 'norm_cfg', 'act_cfg', 'norm_eval', 'with_cp', 'pretrained', 'init_cfg', 'i', 'layer_cfg', 'expand_ratio', 'channel', 'num_blocks', 'stride', 'out_channels', 'inverted_res_layer', 'layer_name', 'layer')"
 105,mmdet/models/utils/make_divisible.py,make_divisible,make_divisible,"Make divisible function.
 
     This function rounds the channel number to the nearest value that can be
@@ -567,9 +567,9 @@
 
     Returns:
         int: The modified output channel number.
-    "
-106,mmengine/model/weight_init.py,weight_init,kaiming_init,
-107,mmengine/model/weight_init.py,weight_init,constant_init,
+    ","('value', 'divisor', 'min_value', 'min_ratio', 'new_value')"
+106,mmengine/model/weight_init.py,weight_init,kaiming_init,,"('module', 'a', 'mode', 'nonlinearity', 'bias', 'distribution')"
+107,mmengine/model/weight_init.py,weight_init,constant_init,,"('module', 'val', 'bias')"
 108,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.make_layer,"Stack InvertedResidual blocks to build a layer for MobileNetV2.
 
         Args:
@@ -578,21 +578,21 @@
             stride (int): stride of the first block. Default: 1
             expand_ratio (int): Expand the number of channels of the
                 hidden layer in InvertedResidual by this ratio. Default: 6.
-        "
-109,mmdet/models/layers/inverted_residual.py,inverted_residual,InvertedResidual.__init__,
-110,mmdet/models/necks/yolo_neck.py,yolo_neck,YOLOV3Neck.__init__,
-111,mmdet/models/necks/yolo_neck.py,yolo_neck,DetectionBlock.__init__,
-112,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head.__init__,
-113,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,BaseDenseHead.__init__,
-114,mmdet/models/task_modules/coders/yolo_bbox_coder.py,yolo_bbox_coder,YOLOBBoxCoder.__init__,
-115,mmdet/models/task_modules/coders/base_bbox_coder.py,base_bbox_coder,BaseBBoxCoder.__init__,
-116,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,YOLOAnchorGenerator.__init__,
-117,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,<listcomp>,None
+        ","('self', 'out_channels', 'num_blocks', 'stride', 'expand_ratio', 'layers', 'i')"
+109,mmdet/models/layers/inverted_residual.py,inverted_residual,InvertedResidual.__init__,,"('self', 'in_channels', 'out_channels', 'mid_channels', 'kernel_size', 'stride', 'se_cfg', 'with_expand_conv', 'conv_cfg', 'norm_cfg', 'act_cfg', 'drop_path_rate', 'with_cp', 'init_cfg')"
+110,mmdet/models/necks/yolo_neck.py,yolo_neck,YOLOV3Neck.__init__,,"('self', 'num_scales', 'in_channels', 'out_channels', 'conv_cfg', 'norm_cfg', 'act_cfg', 'init_cfg', 'cfg', 'i', 'in_c', 'out_c', 'inter_c')"
+111,mmdet/models/necks/yolo_neck.py,yolo_neck,DetectionBlock.__init__,,"('self', 'in_channels', 'out_channels', 'conv_cfg', 'norm_cfg', 'act_cfg', 'init_cfg', 'double_out_channels', 'cfg')"
+112,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head.__init__,,"('self', 'num_classes', 'in_channels', 'out_channels', 'anchor_generator', 'bbox_coder', 'featmap_strides', 'one_hot_smoother', 'conv_cfg', 'norm_cfg', 'act_cfg', 'loss_cls', 'loss_conf', 'loss_xy', 'loss_wh', 'train_cfg', 'test_cfg')"
+113,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,BaseDenseHead.__init__,,"('self', 'init_cfg')"
+114,mmdet/models/task_modules/coders/yolo_bbox_coder.py,yolo_bbox_coder,YOLOBBoxCoder.__init__,,"('self', 'eps', 'kwargs')"
+115,mmdet/models/task_modules/coders/base_bbox_coder.py,base_bbox_coder,BaseBBoxCoder.__init__,,"('self', 'use_box_type', 'kwargs')"
+116,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,YOLOAnchorGenerator.__init__,,"('self', 'strides', 'base_sizes', 'use_box_type', 'num_anchor_per_level', 'base_sizes_per_level')"
+117,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,<listcomp>,None,None
 118,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,YOLOAnchorGenerator.gen_base_anchors,"Generate base anchors.
 
         Returns:
             list(torch.Tensor): Base anchors of a feature grid in multiple                 feature levels.
-        "
+        ","('self', 'multi_level_base_anchors', 'i', 'base_sizes_per_level', 'center')"
 119,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,YOLOAnchorGenerator.gen_single_level_base_anchors,"Generate base anchors of a single level.
 
         Args:
@@ -603,7 +603,7 @@
 
         Returns:
             torch.Tensor: Anchors in a single-level feature maps.
-        "
+        ","('self', 'base_sizes_per_level', 'center', 'x_center', 'y_center', 'base_anchors', 'base_size', 'w', 'h', 'base_anchor')"
 120,mmdet/models/losses/cross_entropy_loss.py,cross_entropy_loss,CrossEntropyLoss.__init__,"CrossEntropyLoss.
 
         Args:
@@ -620,12 +620,12 @@
             loss_weight (float, optional): Weight of the loss. Defaults to 1.0.
             avg_non_ignore (bool): The flag decides to whether the loss is
                 only averaged over non-ignored targets. Default: False.
-        "
-121,mmdet/models/losses/mse_loss.py,mse_loss,MSELoss.__init__,Wrapper of mse loss.
-122,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,num_base_priors,None
-123,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head._init_layers,initialize conv layers in YOLOv3 head.
-124,mmdet/models/dense_heads/yolo_head.py,yolo_head,num_levels,None
-125,mmdet/models/dense_heads/yolo_head.py,yolo_head,num_attrib,None
+        ","('self', 'use_sigmoid', 'use_mask', 'reduction', 'class_weight', 'ignore_index', 'loss_weight', 'avg_non_ignore')"
+121,mmdet/models/losses/mse_loss.py,mse_loss,MSELoss.__init__,Wrapper of mse loss.,"('pred', 'target', 'weight', 'reduction', 'avg_factor', 'kwargs', 'loss')"
+122,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,num_base_priors,None,None
+123,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head._init_layers,initialize conv layers in YOLOv3 head.,"('self', 'i', 'conv_bridge', 'conv_pred')"
+124,mmdet/models/dense_heads/yolo_head.py,yolo_head,num_levels,None,None
+125,mmdet/models/dense_heads/yolo_head.py,yolo_head,num_attrib,None,None
 126,mmengine/runner/checkpoint.py,checkpoint,load_checkpoint,"Load checkpoint from a file or URI.
 
     Args:
@@ -644,7 +644,7 @@
 
     Returns:
         dict or OrderedDict: The loaded checkpoint.
-    "
+    ","('model', 'filename', 'map_location', 'strict', 'logger', 'revise_keys', 'checkpoint')"
 127,mmengine/runner/checkpoint.py,checkpoint,_load_checkpoint,"Load checkpoint from somewhere (modelzoo, file, url).
 
     Args:
@@ -660,8 +660,8 @@
         dict or OrderedDict: The loaded checkpoint. It can be either an
         OrderedDict storing model weights or a dict containing other
         information, which depends on the checkpoint.
-    "
-128,mmengine/runner/checkpoint.py,checkpoint,_get_checkpoint_loader,None
+    ","('filename', 'map_location', 'logger')"
+128,mmengine/runner/checkpoint.py,checkpoint,_get_checkpoint_loader,None,None
 129,mmengine/runner/checkpoint.py,checkpoint,load_from_local,"load checkpoint by local file path.
 
     Args:
@@ -670,9 +670,9 @@
 
     Returns:
         dict or OrderedDict: The loaded checkpoint.
-    "
-130,mmengine/runner/checkpoint.py,checkpoint,_load_checkpoint_to_model,
-131,mmengine/runner/checkpoint.py,checkpoint,<dictcomp>,None
+    ","('filename', 'map_location', 'checkpoint')"
+130,mmengine/runner/checkpoint.py,checkpoint,_load_checkpoint_to_model,,"('model', 'checkpoint', 'strict', 'logger', 'revise_keys', 'state_dict', 'metadata')"
+131,mmengine/runner/checkpoint.py,checkpoint,<dictcomp>,None,None
 132,mmengine/runner/checkpoint.py,checkpoint,load_state_dict,"Load state_dict to a module.
 
     This method is modified from :meth:`torch.nn.Module.load_state_dict`.
@@ -687,8 +687,8 @@
             :meth:`~torch.nn.Module.state_dict` function. Default: ``False``.
         logger (:obj:`logging.Logger`, optional): Logger to log the error
             message. If not specified, print function will be used.
-    "
-133,mmengine/runner/checkpoint.py,checkpoint,load,None
+    ","('module', 'state_dict', 'strict', 'logger', 'missing_keys', 'rank', '_')"
+133,mmengine/runner/checkpoint.py,checkpoint,load,None,None
 134,mmengine/model/wrappers/utils.py,utils,is_model_wrapper,"Check if a module is a model wrapper.
 
     The following 4 model in MMEngine (and their subclasses) are regarded as
@@ -702,14 +702,14 @@
 
     Returns:
         bool: True if the input model is a model wrapper.
-    "
-135,mmengine/registry/registry.py,registry,module_dict,None
-136,mmengine/registry/registry.py,registry,children,None
-137,mmengine/model/wrappers/utils.py,utils,<genexpr>,None
+    ","('model', 'registry', 'module_wrappers')"
+135,mmengine/registry/registry.py,registry,module_dict,None,None
+136,mmengine/registry/registry.py,registry,children,None,None
+137,mmengine/model/wrappers/utils.py,utils,<genexpr>,None,None
 138,mmdet/models/detectors/single_stage.py,single_stage,SingleStageDetector._load_from_state_dict,"Exchange bbox_head key to rpn_head key when loading two-stage
-        weights into single-stage model."
-139,mmdet/models/detectors/single_stage.py,single_stage,<listcomp>,None
-140,mmengine/runner/checkpoint.py,checkpoint,<listcomp>,None
+        weights into single-stage model.","('self', 'state_dict', 'prefix', 'local_metadata', 'strict', 'missing_keys', 'unexpected_keys', 'error_msgs', 'bbox_head_keys', 'rpn_head_keys', 'rpn_head_key', 'bbox_head_key')"
+139,mmdet/models/detectors/single_stage.py,single_stage,<listcomp>,None,None
+140,mmengine/runner/checkpoint.py,checkpoint,<listcomp>,None,None
 141,mmengine/dist/utils.py,utils,get_dist_info,"Get distributed information of the given process group.
 
     Note:
@@ -723,7 +723,7 @@
     Returns:
         tuple[int, int]: Return a tuple containing the ``rank`` and
         ``world_size``.
-    "
+    ","('group', 'world_size', 'rank')"
 142,mmengine/dist/utils.py,utils,get_world_size,"Return the number of the given process group.
 
     Note:
@@ -737,7 +737,7 @@
     Returns:
         int: Return the number of processes of the given process group if in
         distributed environment, otherwise 1.
-    "
+    ","('group',)"
 143,mmengine/model/base_model/base_model.py,base_model,BaseModel.to,"Overrides this method to call :meth:`BaseDataPreprocessor.to`
         additionally.
 
@@ -747,26 +747,26 @@
 
         Returns:
             nn.Module: The model itself.
-        "
+        ","('self', 'device', 'args', 'kwargs')"
 144,mmengine/model/base_model/base_model.py,base_model,BaseModel._set_device,"Recursively set device for `BaseDataPreprocessor` instance.
 
         Args:
             device (torch.device): the desired device of the parameters and
                     buffers in this module.
-        "
-145,mmengine/model/base_model/base_model.py,base_model,apply_fn,None
+        ","('self', 'device', 'apply_fn')"
+145,mmengine/model/base_model/base_model.py,base_model,apply_fn,None,None
 146,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.train,"Convert the model into training mode while keep normalization layer
-        frozen."
-147,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2._freeze_stages,
+        frozen.","('self', 'mode', 'm')"
+147,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2._freeze_stages,,"('self', 'param', 'i', 'layer')"
 148,mmengine/utils/misc.py,misc,is_str,"Whether the input is an string instance.
 
     Note: This method is deprecated since python 2 is no longer supported.
-    "
-149,mmengine/fileio/file_client.py,file_client,infer_client,None
-150,mmengine/fileio/file_client.py,file_client,parse_uri_prefix,None
-151,mmengine/utils/path.py,path,is_filepath,
-152,mmengine/fileio/file_client.py,file_client,__new__,None
-153,mmengine/fileio/file_client.py,file_client,HardDiskBackend.__init__,
+    ","('x',)"
+149,mmengine/fileio/file_client.py,file_client,infer_client,None,None
+150,mmengine/fileio/file_client.py,file_client,parse_uri_prefix,None,None
+151,mmengine/utils/path.py,path,is_filepath,,"('x',)"
+152,mmengine/fileio/file_client.py,file_client,__new__,None,None
+153,mmengine/fileio/file_client.py,file_client,HardDiskBackend.__init__,,"('self',)"
 154,mmengine/fileio/file_client.py,file_client,FileClient.get,"Read data from a given ``filepath`` with 'rb' mode.
 
         Note:
@@ -781,7 +781,7 @@
         Returns:
             bytes | memoryview: Expected bytes object or a memory view of the
             bytes object.
-        "
+        ","('self', 'filepath')"
 155,mmengine/fileio/backends/local_backend.py,local_backend,LocalBackend.get,"Read bytes from a given ``filepath`` with 'rb' mode.
 
         Args:
@@ -795,7 +795,7 @@
             >>> filepath = '/path/of/file'
             >>> backend.get(filepath)
             b'hello world'
-        "
+        ","('self', 'filepath', 'f', 'value')"
 156,mmdet/apis/inference.py,inference,inference_detector,"Inference image(s) with the detector.
 
     Args:
@@ -808,10 +808,10 @@
         :obj:`DetDataSample` or list[:obj:`DetDataSample`]:
         If imgs is a list or tuple, the same length list type results
         will be returned, otherwise return the detection results directly.
-    "
-157,mmdet/datasets/transforms/loading.py,loading,LoadAnnotations.__init__,
-158,mmdet/datasets/transforms/formatting.py,formatting,PackDetInputs.__init__,
-159,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,device,None
+    ","('model', 'imgs', 'test_pipeline', 'is_batch', 'cfg', 'm', 'result_list', 'img', 'data_', 'results')"
+157,mmdet/datasets/transforms/loading.py,loading,LoadAnnotations.__init__,,"('self', 'with_mask', 'poly2mask', 'box_type', 'kwargs')"
+158,mmdet/datasets/transforms/formatting.py,formatting,PackDetInputs.__init__,,"('self', 'meta_keys')"
+159,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,device,None,None
 160,mmdet/datasets/transforms/loading.py,loading,LoadImageFromNDArray.transform,"Transform function to add image meta information.
 
         Args:
@@ -820,13 +820,13 @@
 
         Returns:
             dict: The dict contains loaded image and meta information.
-        "
-161,mmdet/structures/bbox/box_type.py,box_type,wrapper,None
-162,mmdet/datasets/transforms/transforms.py,transforms,transform,None
-163,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_bboxes,Resize bounding boxes with ``results['scale_factor']``.
-164,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_masks,Resize masks with ``results['scale']``
-165,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_seg,Resize semantic segmentation map with ``results['scale']``.
-166,mmdet/datasets/transforms/transforms.py,transforms,Resize._record_homography_matrix,Record the homography matrix for the Resize.
+        ","('self', 'results', 'img')"
+161,mmdet/structures/bbox/box_type.py,box_type,wrapper,None,None
+162,mmdet/datasets/transforms/transforms.py,transforms,transform,None,None
+163,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_bboxes,Resize bounding boxes with ``results['scale_factor']``.,"('self', 'results')"
+164,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_masks,Resize masks with ``results['scale']``,"('self', 'results')"
+165,mmdet/datasets/transforms/transforms.py,transforms,Resize._resize_seg,Resize semantic segmentation map with ``results['scale']``.,"('self', 'results', 'gt_seg')"
+166,mmdet/datasets/transforms/transforms.py,transforms,Resize._record_homography_matrix,Record the homography matrix for the Resize.,"('self', 'results', 'w_scale', 'h_scale', 'homography_matrix')"
 167,mmdet/datasets/transforms/loading.py,loading,LoadAnnotations.transform,"Function to load multiple types annotations.
 
         Args:
@@ -835,14 +835,14 @@
         Returns:
             dict: The dict contains loaded bounding box, label and
             semantic segmentation.
-        "
+        ","('self', 'results')"
 168,mmdet/datasets/transforms/loading.py,loading,LoadAnnotations._load_bboxes,"Private function to load bounding box annotations.
 
         Args:
             results (dict): Result dict from :obj:``mmengine.BaseDataset``.
         Returns:
             dict: The dict contains loaded bounding box annotations.
-        "
+        ","('self', 'results', 'gt_bboxes', 'gt_ignore_flags', 'instance', '_', 'box_type_cls')"
 169,mmdet/structures/bbox/box_type.py,box_type,get_box_type,"get both box type name and class.
 
     Args:
@@ -850,9 +850,9 @@
 
     Returns:
         Tuple[str, type]: A tuple of box type name and class.
-    "
-170,mmdet/structures/bbox/horizontal_boxes.py,horizontal_boxes,HorizontalBoxes.__init__,
-171,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__init__,
+    ","('box_type', 'type_name', 'type_cls')"
+170,mmdet/structures/bbox/horizontal_boxes.py,horizontal_boxes,HorizontalBoxes.__init__,,"('self', 'data', 'dtype', 'device', 'clone', 'in_mode')"
+171,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__init__,,"('self', 'data', 'dtype', 'device', 'clone')"
 172,mmdet/datasets/transforms/loading.py,loading,LoadAnnotations._load_labels,"Private function to load label annotations.
 
         Args:
@@ -860,7 +860,7 @@
 
         Returns:
             dict: The dict contains loaded label annotations.
-        "
+        ","('self', 'results', 'gt_bboxes_labels', 'instance')"
 173,mmdet/datasets/transforms/formatting.py,formatting,PackDetInputs.transform,"Method to pack the input data.
 
         Args:
@@ -872,38 +872,38 @@
             - 'inputs' (obj:`torch.Tensor`): The forward data of models.
             - 'data_sample' (obj:`DetDataSample`): The annotation info of the
                 sample.
-        "
-174,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.__init__,
-175,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.__setattr__,setattr is only used to set data.
+        ","('self', 'results', 'packed_results', 'img', 'valid_idx', 'ignore_idx', 'data_sample', 'instance_data', 'ignore_instance_data', 'key', 'proposals', 'gt_sem_seg_data', 'img_meta')"
+174,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.__init__,,"('self', 'metainfo', 'kwargs')"
+175,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.__setattr__,setattr is only used to set data.,"('self', 'name', 'value')"
 176,mmengine/structures/instance_data.py,instance_data,InstanceData.__setattr__,"setattr is only used to set data.
 
         the value must have the attribute of `__len__` and have the same length
         of instancedata
-        "
-177,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__getitem__,Rewrite getitem to protect the last dimension shape.
-178,mmdet/structures/bbox/base_boxes.py,base_boxes,device,None
-179,mmengine/structures/instance_data.py,instance_data,InstanceData.__len__,int: the length of InstanceData
+        ","('self', 'name', 'value')"
+177,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__getitem__,Rewrite getitem to protect the last dimension shape.,"('self', 'index', 'boxes')"
+178,mmdet/structures/bbox/base_boxes.py,base_boxes,device,None,None
+179,mmengine/structures/instance_data.py,instance_data,InstanceData.__len__,int: the length of InstanceData,"('self',)"
 180,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.set_field,"Special method for set union field, used as property.setter
-        functions."
+        functions.","('self', 'value', 'name', 'dtype', 'field_type')"
 181,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.values,"
         Returns:
             list: Contains all values in data.
-        "
+        ","('self',)"
 182,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.keys,"
         Returns:
             list: Contains all keys in data_fields.
-        "
-183,mmengine/structures/base_data_element.py,base_data_element,<listcomp>,None
-184,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__len__,Return the length of self.tensor first dimension.
-185,mmdet/structures/det_data_sample.py,det_data_sample,gt_instances,None
-186,mmdet/structures/det_data_sample.py,det_data_sample,ignored_instances,None
+        ","('self',)"
+183,mmengine/structures/base_data_element.py,base_data_element,<listcomp>,None,None
+184,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.__len__,Return the length of self.tensor first dimension.,"('self',)"
+185,mmdet/structures/det_data_sample.py,det_data_sample,gt_instances,None,None
+186,mmdet/structures/det_data_sample.py,det_data_sample,ignored_instances,None,None
 187,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.set_metainfo,"Set or change key-value pairs in ``metainfo_field`` by parameter
         ``metainfo``.
 
         Args:
             metainfo (dict): A dict contains the meta information
                 of image, such as ``img_shape``, ``scale_factor``, etc.
-        "
+        ","('self', 'metainfo', 'meta', 'k', 'v')"
 188,mmengine/model/base_model/base_model.py,base_model,BaseModel.test_step,"``BaseModel`` implements ``test_step`` the same as ``val_step``.
 
         Args:
@@ -911,7 +911,7 @@
 
         Returns:
             list: The predictions of given data.
-        "
+        ","('self', 'data')"
 189,mmdet/models/data_preprocessors/data_preprocessor.py,data_preprocessor,DetDataPreprocessor.forward,"Perform normalization、padding and bgr2rgb conversion based on
         ``BaseDataPreprocessor``.
 
@@ -921,13 +921,13 @@
 
         Returns:
             dict: Data in the same format as the model input.
-        "
+        ","('self', 'data', 'training', 'batch_pad_shape', 'inputs', 'data_samples', 'batch_input_shape', 'data_sample', 'pad_shape', 'batch_aug')"
 190,mmdet/models/data_preprocessors/data_preprocessor.py,data_preprocessor,DetDataPreprocessor._get_pad_shape,"Get the pad_shape of each image based on data and
-        pad_size_divisor."
+        pad_size_divisor.","('self', 'data', '_batch_inputs', 'batch_pad_shape', 'ori_input', 'pad_h', 'pad_w')"
 191,mmengine/utils/misc.py,misc,is_list_of,"Check whether it is a list of some type.
 
     A partial method of :func:`is_seq_of`.
-    "
+    ","('seq', 'expected_type')"
 192,mmengine/utils/misc.py,misc,is_seq_of,"Check whether it is a sequence of some type.
 
     Args:
@@ -945,7 +945,7 @@
         True
         >>> is_seq_of(seq, int)
         False
-    "
+    ","('seq', 'expected_type', 'seq_type', 'exp_seq_type', 'item')"
 193,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,ImgDataPreprocessor.forward,"Performs normalization、padding and bgr2rgb conversion based on
         ``BaseDataPreprocessor``.
 
@@ -962,7 +962,7 @@
 
         Returns:
             dict or list: Data in the same format as the model input.
-        "
+        ","('self', 'data', 'training', '_batch_inputs', 'batch_inputs', '_batch_input', 'h', 'w', 'target_h', 'target_w', 'pad_h', 'pad_w')"
 194,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,BaseDataPreprocessor.cast_data,"Copying data to the target device.
 
         Args:
@@ -970,10 +970,10 @@
 
         Returns:
             CollatedResult: Inputs and data sample at target device.
-        "
-195,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,<dictcomp>,None
-196,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,<genexpr>,None
-197,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.to,Apply same name function to all tensors in data_fields.
+        ","('self', 'data')"
+195,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,<dictcomp>,None,None
+196,mmengine/model/base_model/data_preprocessor.py,data_preprocessor,<genexpr>,None,None
+197,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.to,Apply same name function to all tensors in data_fields.,"('self', 'args', 'kwargs', 'new_data', 'k', 'v', 'data')"
 198,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.new,"Return a new data element with same type. If ``metainfo`` and
         ``data`` are None, the new data element will have same metainfo and
         data. If metainfo or data is not None, the new result will overwrite it
@@ -988,29 +988,29 @@
 
         Returns:
             BaseDataElement: a new data element with same type.
-        "
+        ","('self', 'metainfo', 'kwargs', 'new_data')"
 199,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.metainfo_items,"
         Returns:
             iterator: an iterator object whose element is (key, value) tuple
             pairs for ``metainfo``.
-        "
+        ","('self', 'k')"
 200,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.metainfo_keys,"
         Returns:
             list: Contains all keys in metainfo_fields.
-        "
+        ","('self',)"
 201,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.items,"
         Returns:
             iterator: an iterator object whose element is (key, value) tuple
             pairs for ``data``.
-        "
+        ","('self', 'k')"
 202,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.set_data,"Set or change key-value pairs in ``data_field`` by parameter
         ``data``.
 
         Args:
             data (dict): A dict contains annotations of image or
                 model predictions.
-        "
-203,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.to,Reload ``to`` from self.tensor.
+        ","('self', 'data', 'k', 'v')"
+203,mmdet/structures/bbox/base_boxes.py,base_boxes,BaseBoxes.to,Reload ``to`` from self.tensor.,"('self', 'args', 'kwargs')"
 204,mmengine/model/utils.py,utils,stack_batch,"Stack multiple tensors to form a batch and pad the tensor to the max
     shape use the right bottom padding mode in these images. If
     ``pad_size_divisor > 0``, add padding to ensure the shape of each dim is
@@ -1026,16 +1026,16 @@
 
     Returns:
        Tensor: The n dim tensor.
-    "
-205,mmengine/model/utils.py,utils,<setcomp>,None
-206,mmengine/model/utils.py,utils,<listcomp>,None
-207,mmdet/models/utils/misc.py,misc,samplelist_boxtype2tensor,
+    ","('tensor_list', 'pad_size_divisor', 'pad_value', 'dim', 'num_img', 'all_sizes', 'max_sizes', 'padded_sizes', 'pad', 'batch_tensor', 'idx', 'tensor')"
+205,mmengine/model/utils.py,utils,<setcomp>,None,None
+206,mmengine/model/utils.py,utils,<listcomp>,None,None
+207,mmdet/models/utils/misc.py,misc,samplelist_boxtype2tensor,,"('batch_data_samples', 'data_samples', 'bboxes')"
 208,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.__contains__,"Whether the item is in dataelement.
 
         Args:
             item (str): The key to inquire.
-        "
-209,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.get,get property in data and metainfo as the same as python.
+        ","('self', 'item')"
+209,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.get,get property in data and metainfo as the same as python.,"('self', 'key', 'default')"
 210,mmengine/model/base_model/base_model.py,base_model,BaseModel._run_forward,"Unpacks data for :meth:`forward`
 
         Args:
@@ -1044,7 +1044,7 @@
 
         Returns:
             dict or list: Results of training or testing mode.
-        "
+        ","('self', 'data', 'mode', 'results')"
 211,mmdet/models/detectors/base.py,base,BaseDetector.forward,"The unified entry for a forward process in both training and test.
 
         The method should accept three modes: ""tensor"", ""predict"" and ""loss"":
@@ -1073,7 +1073,7 @@
             - If ``mode=""tensor""``, return a tensor or a tuple of tensor.
             - If ``mode=""predict""``, return a list of :obj:`DetDataSample`.
             - If ``mode=""loss""``, return a dict of tensor.
-        "
+        ","('self', 'inputs', 'data_samples', 'mode')"
 212,mmdet/models/detectors/single_stage.py,single_stage,SingleStageDetector.predict,"Predict results from a batch of inputs and data samples with post-
         processing.
 
@@ -1097,7 +1097,7 @@
                     (num_instances, ).
                 - bboxes (Tensor): Has a shape (num_instances, 4),
                     the last dimension 4 arrange as (x1, y1, x2, y2).
-        "
+        ","('self', 'batch_inputs', 'batch_data_samples', 'rescale', 'x', 'results_list')"
 213,mmdet/models/detectors/single_stage.py,single_stage,SingleStageDetector.extract_feat,"Extract features.
 
         Args:
@@ -1106,13 +1106,13 @@
         Returns:
             tuple[Tensor]: Multi-level features that may have
             different resolutions.
-        "
-214,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.forward,Forward function.
-215,mmdet/models/layers/inverted_residual.py,inverted_residual,InvertedResidual.forward,
-216,mmdet/models/layers/inverted_residual.py,inverted_residual,_inner_forward,None
-217,mmdet/models/detectors/base.py,base,with_neck,None
-218,mmdet/models/necks/yolo_neck.py,yolo_neck,YOLOV3Neck.forward,
-219,mmdet/models/necks/yolo_neck.py,yolo_neck,DetectionBlock.forward,
+        ","('self', 'batch_inputs', 'x')"
+214,mmdet/models/backbones/mobilenet_v2.py,mobilenet_v2,MobileNetV2.forward,Forward function.,"('self', 'x', 'outs', 'i', 'layer_name', 'layer')"
+215,mmdet/models/layers/inverted_residual.py,inverted_residual,InvertedResidual.forward,,"('self', 'x', '_inner_forward', 'out')"
+216,mmdet/models/layers/inverted_residual.py,inverted_residual,_inner_forward,None,None
+217,mmdet/models/detectors/base.py,base,with_neck,None,None
+218,mmdet/models/necks/yolo_neck.py,yolo_neck,YOLOV3Neck.forward,,"('self', 'feats', 'outs', 'out', 'i', 'x', 'conv', 'tmp', 'detect')"
+219,mmdet/models/necks/yolo_neck.py,yolo_neck,DetectionBlock.forward,,"('self', 'x', 'tmp', 'out')"
 220,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,BaseDenseHead.predict,"Perform forward propagation of the detection head and predict
         detection results on the features of the upstream network.
 
@@ -1128,9 +1128,9 @@
         Returns:
             list[obj:`InstanceData`]: Detection results of each image
             after the post process.
-        "
-221,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,<listcomp>,None
-222,mmengine/structures/base_data_element.py,base_data_element,metainfo,None
+        ","('self', 'x', 'batch_data_samples', 'rescale', 'batch_img_metas', 'outs', 'predictions')"
+221,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,<listcomp>,None,None
+222,mmengine/structures/base_data_element.py,base_data_element,metainfo,None,None
 223,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head.forward,"Forward features from the upstream network.
 
         Args:
@@ -1140,7 +1140,7 @@
         Returns:
             tuple[Tensor]: A tuple of multi-level predication map, each is a
                 4D-tensor of shape (batch_size, 5+num_classes, height, width).
-        "
+        ","('self', 'x', 'pred_maps', 'i', 'feat', 'pred_map')"
 224,mmdet/models/dense_heads/yolo_head.py,yolo_head,YOLOV3Head.predict_by_feat,"Transform a batch of output features extracted from the head into
         bbox results. It has been accelerated since PR #5991.
 
@@ -1167,8 +1167,8 @@
               (num_instances, ).
             - bboxes (Tensor): Has a shape (num_instances, 4),
               the last dimension 4 arrange as (x1, y1, x2, y2).
-        "
-225,mmdet/models/dense_heads/yolo_head.py,yolo_head,<listcomp>,None
+        ","('self', 'pred_maps', 'batch_img_metas', 'cfg', 'rescale', 'with_nms', 'num_imgs', 'featmap_sizes', 'mlvl_anchors', 'flatten_preds', 'flatten_strides', 'pred', 'stride', 'flatten_bbox_preds', 'flatten_objectness', 'flatten_cls_scores', 'flatten_anchors', 'flatten_bboxes', 'results_list', 'bboxes', 'scores', 'objectness', 'img_meta', 'conf_thr', 'conf_inds', 'score_thr', 'nms_pre', 'labels', 'keep_idxs', '_', 'results')"
+225,mmdet/models/dense_heads/yolo_head.py,yolo_head,<listcomp>,None,None
 226,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,AnchorGenerator.grid_priors,"Generate grid anchors in multiple feature levels.
 
         Args:
@@ -1180,8 +1180,8 @@
 
         Return:
             list[torch.Tensor]: Anchors in multiple feature levels.                 The sizes of each tensor should be [N, 4], where                 N = width * height * num_base_anchors, width and height                 are the sizes of the corresponding feature level,                 num_base_anchors is the number of anchors for that level.
-        "
-227,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,num_levels,None
+        ","('self', 'featmap_sizes', 'dtype', 'device', 'multi_level_anchors', 'i', 'anchors')"
+227,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,num_levels,None,None
 228,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,AnchorGenerator.single_level_grid_priors,"Generate grid anchors of a single level.
 
         Note:
@@ -1197,7 +1197,7 @@
 
         Returns:
             torch.Tensor: Anchors in the overall feature maps.
-        "
+        ","('self', 'featmap_size', 'level_idx', 'dtype', 'device', 'base_anchors', 'feat_h', 'feat_w', 'stride_w', 'stride_h', 'shift_x', 'shift_y', 'shift_xx', 'shift_yy', 'shifts', 'all_anchors')"
 229,mmdet/models/task_modules/prior_generators/anchor_generator.py,anchor_generator,AnchorGenerator._meshgrid,"Generate mesh grid of x and y.
 
         Args:
@@ -1208,7 +1208,7 @@
 
         Returns:
             tuple[torch.Tensor]: The mesh grids of x and y.
-        "
+        ","('self', 'x', 'y', 'row_major', 'xx', 'yy')"
 230,mmdet/models/task_modules/coders/yolo_bbox_coder.py,yolo_bbox_coder,YOLOBBoxCoder.decode,"Apply transformation `pred_bboxes` to `boxes`.
 
         Args:
@@ -1219,7 +1219,7 @@
 
         Returns:
             Union[torch.Tensor, :obj:`BaseBoxes`]: Decoded boxes.
-        "
+        ","('self', 'bboxes', 'pred_bboxes', 'stride', 'xy_centers', 'whs', 'decoded_bboxes')"
 231,mmdet/structures/bbox/transforms.py,transforms,get_box_tensor,"Get tensor data from box type boxes.
 
     Args:
@@ -1229,7 +1229,7 @@
 
     Returns:
         Tensor: boxes tensor.
-    "
+    ","('boxes',)"
 232,mmdet/models/utils/misc.py,misc,filter_scores_and_topk,"Filter results using score threshold and topk candidates.
 
     Args:
@@ -1247,7 +1247,7 @@
             - labels (Tensor): The class labels, shape                 (num_bboxes_filtered, ).
             - anchor_idxs (Tensor): The anchor indexes, shape                 (num_bboxes_filtered, ).
             - filtered_results (dict or list or Tensor, Optional):                 The filtered results. The shape of each item is                 (num_bboxes_filtered, N).
-    "
+    ","('scores', 'score_thr', 'topk', 'results', 'valid_mask', 'valid_idxs', 'num_topk', 'idxs', 'topk_idxs', 'labels', 'filtered_results')"
 233,mmdet/models/dense_heads/base_dense_head.py,base_dense_head,BaseDenseHead._bbox_post_process,"bbox post-processing method.
 
         The boxes would be rescaled to the original image scale and do
@@ -1275,7 +1275,7 @@
                   (num_instances, ).
                 - bboxes (Tensor): Has a shape (num_instances, 4),
                   the last dimension 4 arrange as (x1, y1, x2, y2).
-        "
+        ","('self', 'results', 'cfg', 'rescale', 'with_nms', 'img_meta', 'scale_factor', 'score_factors', 'w', 'h', 'valid_mask', 'bboxes', 'det_bboxes', 'keep_idxs')"
 234,mmdet/structures/bbox/transforms.py,transforms,scale_boxes,"Scale boxes with type of tensor or box type.
 
     Args:
@@ -1286,8 +1286,8 @@
 
     Returns:
         Union[Tensor, :obj:`BaseBoxes`]: Scaled boxes.
-    "
-235,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.pop,pop property in data and metainfo as the same as python.
+    ","('boxes', 'scale_factor', 'repeat_num')"
+235,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.pop,pop property in data and metainfo as the same as python.,"('self', 'args', 'name')"
 236,mmdet/structures/bbox/transforms.py,transforms,get_box_wh,"Get the width and height of boxes with type of tensor or box type.
 
     Args:
@@ -1296,8 +1296,8 @@
 
     Returns:
         Tuple[Tensor, Tensor]: the width and height of boxes.
-    "
-237,mmengine/utils/misc.py,misc,new_func,None
+    ","('boxes', 'w', 'h')"
+237,mmengine/utils/misc.py,misc,new_func,None,None
 238,mmengine/structures/instance_data.py,instance_data,InstanceData.__getitem__,"
         Args:
             item (str, obj:`slice`,
@@ -1306,7 +1306,7 @@
 
         Returns:
             obj:`InstanceData`: Corresponding values.
-        "
+        ","('self', 'item', 'new_data', 'k', 'indexes', 'slice_list', 'index', 'r_list', 'new_value', 'r')"
 239,mmdet/models/detectors/base.py,base,BaseDetector.add_pred_to_datasample,"Add predictions to `DetDataSample`.
 
         Args:
@@ -1327,11 +1327,11 @@
                     (num_instances, ).
                 - bboxes (Tensor): Has a shape (num_instances, 4),
                     the last dimension 4 arrange as (x1, y1, x2, y2).
-        "
-240,mmdet/structures/det_data_sample.py,det_data_sample,pred_instances,None
-241,mmengine/visualization/visualizer.py,visualizer,get_instance,None
-242,mmdet/visualization/local_visualizer.py,local_visualizer,DetLocalVisualizer.__init__,
-243,mmengine/visualization/visualizer.py,visualizer,Visualizer.__init__,
+        ","('self', 'data_samples', 'results_list', 'data_sample', 'pred_instances')"
+240,mmdet/structures/det_data_sample.py,det_data_sample,pred_instances,None,None
+241,mmengine/visualization/visualizer.py,visualizer,get_instance,None,None
+242,mmdet/visualization/local_visualizer.py,local_visualizer,DetLocalVisualizer.__init__,,"('self', 'name', 'image', 'vis_backends', 'save_dir', 'bbox_color', 'text_color', 'mask_color', 'line_width', 'alpha')"
+243,mmengine/visualization/visualizer.py,visualizer,Visualizer.__init__,,"('self', 'name', 'image', 'vis_backends', 'save_dir', 'fig_save_cfg', 'fig_show_cfg', 'names', 'type_names', 'vis_backend')"
 244,mmengine/visualization/visualizer.py,visualizer,Visualizer._initialize_fig,"Build figure according to fig_cfg.
 
         Args:
@@ -1339,8 +1339,8 @@
 
         Returns:
              tuple: build canvas figure and axes.
-        "
-245,mmengine/dist/utils.py,utils,wrapper,None
+        ","('self', 'fig_cfg', 'fig', 'ax', 'canvas')"
+245,mmengine/dist/utils.py,utils,wrapper,None,None
 246,mmengine/dist/utils.py,utils,is_main_process,"Whether the current rank of the given process group is equal to 0.
 
     Args:
@@ -1350,10 +1350,10 @@
     Returns:
         bool: Return True if the current rank of the given process group is
         equal to 0, otherwise False.
-    "
-247,mmengine/visualization/visualizer.py,visualizer,dataset_meta,None
-248,mmdet/visualization/local_visualizer.py,local_visualizer,add_datasample,None
-249,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.cpu,Convert all tensors to CPU in data.
+    ","('group',)"
+247,mmengine/visualization/visualizer.py,visualizer,dataset_meta,None,None
+248,mmdet/visualization/local_visualizer.py,local_visualizer,add_datasample,None,None
+249,mmengine/structures/base_data_element.py,base_data_element,BaseDataElement.cpu,Convert all tensors to CPU in data.,"('self', 'new_data', 'k', 'v', 'data')"
 250,mmdet/visualization/local_visualizer.py,local_visualizer,DetLocalVisualizer._draw_instances,"Draw instances of GT or prediction.
 
         Args:
@@ -1366,8 +1366,8 @@
 
         Returns:
             np.ndarray: the drawn image which channel is RGB.
-        "
-251,mmengine/visualization/visualizer.py,visualizer,set_image,None
+        ","('self', 'image', 'instances', 'classes', 'palette', 'bboxes', 'labels', 'max_label', 'text_colors', 'bbox_color', 'colors', 'positions', 'areas', 'scales', 'i', 'pos', 'label', 'label_text', 'score', 'masks', 'mask_color', 'polygons', 'mask', 'contours', '_', 'stats', 'centroids', 'largest_id')"
+251,mmengine/visualization/visualizer.py,visualizer,set_image,None,None
 252,mmdet/visualization/palette.py,palette,get_palette,"Get palette from various inputs.
 
     Args:
@@ -1376,16 +1376,16 @@
 
     Returns:
         list[tuple[int]]: A list of color tuples.
-    "
-253,mmdet/visualization/local_visualizer.py,local_visualizer,<listcomp>,None
-254,mmengine/visualization/visualizer.py,visualizer,draw_bboxes,None
+    ","('palette', 'num_classes', 'dataset_palette', 'state', 'CocoDataset', 'CocoPanopticDataset', 'CityscapesDataset', 'VOCDataset')"
+253,mmdet/visualization/local_visualizer.py,local_visualizer,<listcomp>,None,None
+254,mmengine/visualization/visualizer.py,visualizer,draw_bboxes,None,None
 255,mmengine/visualization/utils.py,utils,check_type,"Check whether the type of value is in ``valid_type``.
 
     Args:
         name (str): value name.
         value (Any): value.
         valid_type (Type, Tuple[Type, ...]): expected type.
-    "
+    ","('name', 'value', 'valid_type')"
 256,mmengine/visualization/utils.py,utils,tensor2ndarray,"If the type of value is torch.Tensor, convert the value to np.ndarray.
 
     Args:
@@ -1393,7 +1393,7 @@
 
     Returns:
         Any: value.
-    "
+    ","('value',)"
 257,mmengine/visualization/visualizer.py,visualizer,Visualizer._is_posion_valid,"Judge whether the position is in image.
 
         Args:
@@ -1402,9 +1402,9 @@
 
         Returns:
             bool: Whether the position is in image.
-        "
-258,mmengine/visualization/visualizer.py,visualizer,<listcomp>,None
-259,mmengine/visualization/visualizer.py,visualizer,draw_polygons,None
+        ","('self', 'position', 'flag')"
+258,mmengine/visualization/visualizer.py,visualizer,<listcomp>,None,None
+259,mmengine/visualization/visualizer.py,visualizer,draw_polygons,None,None
 260,mmengine/visualization/utils.py,utils,color_val_matplotlib,"Convert various input in RGB order to normalized RGB matplotlib color
     tuples,
     Args:
@@ -1412,8 +1412,8 @@
     Returns:
         Union[str, tuple, List[Union[str, tuple]]]: A tuple of 3 normalized
         floats indicating RGB channels.
-    "
-261,mmengine/visualization/utils.py,utils,<listcomp>,None
+    ","('colors', 'channel')"
+261,mmengine/visualization/utils.py,utils,<listcomp>,None,None
 262,mmdet/visualization/palette.py,palette,_get_adaptive_scales,"Get adaptive scales according to areas.
 
     The scale range is [0.5, 1.0]. When the area is less than
@@ -1430,8 +1430,8 @@
 
     Returns:
         ndarray: The adaotive scales with the shape of (n, ).
-    "
-263,mmengine/visualization/visualizer.py,visualizer,draw_texts,None
+    ","('areas', 'min_area', 'max_area', 'scales')"
+263,mmengine/visualization/visualizer.py,visualizer,draw_texts,None,None
 264,mmengine/visualization/utils.py,utils,check_type_and_length,"Check whether the type of value is in ``valid_type``. If type of the
     ``value`` is list, check whether its length is equal with or greater than
     ``valid_length``.
@@ -1443,7 +1443,7 @@
 
     Returns:
         List[Any]: value.
-    "
+    ","('name', 'value', 'valid_type', 'valid_length')"
 265,mmengine/visualization/utils.py,utils,check_length,"If type of the ``value`` is list, check whether its length is equal with
     or greater than ``valid_length``.
 
@@ -1451,7 +1451,7 @@
         name (str): value name.
         value (Any): value.
         valid_length (int): expected length.
-    "
+    ","('name', 'value', 'valid_length')"
 266,mmengine/visualization/utils.py,utils,value2list,"If the type of ``value`` is ``valid_type``, convert the value to list
     and expand to ``expand_dim``.
 
@@ -1462,8 +1462,8 @@
 
     Returns:
         List[Any]: value.
-    "
-267,mmengine/visualization/visualizer.py,visualizer,get_image,None
+    ","('value', 'valid_type', 'expand_dim')"
+267,mmengine/visualization/visualizer.py,visualizer,get_image,None,None
 268,mmengine/visualization/utils.py,utils,img_from_canvas,"Get RGB image from ``FigureCanvasAgg``.
 
     Args:
@@ -1471,5 +1471,5 @@
 
     Returns:
         np.ndarray: the output of image in RGB.
-    "
-269,mmengine/visualization/visualizer.py,visualizer,add_image,None
+    ","('canvas', 's', 'width', 'height', 'buffer', 'img_rgba', 'rgb', 'alpha')"
+269,mmengine/visualization/visualizer.py,visualizer,add_image,None,None
